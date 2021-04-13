@@ -1,0 +1,7 @@
+{
+  "name": "UTSAMBWC14180222",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
