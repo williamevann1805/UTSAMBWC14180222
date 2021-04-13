@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Halaman Input
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -13,5 +13,30 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <center>
+    <ion-input placeholder="Judul" [(ngModel)]="Judul"></ion-input>
+    <ion-input placeholder="Isi" [(ngModel)]="Isi"></ion-input>
+    <ion-input placeholder="Nilai" [(ngModel)]="Nilai"></ion-input>
+    <ion-input type="date" placeholder="Tanggal" [(ngModel)]="Tanggal"></ion-input>
+  
+    <ion-fab horizontal="center" slot="fixed">
+      <ion-fab-button (click)="TambahFoto()">
+        <ion-icon name="camera"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+    <ion-button (click)="uploadFoto()" style= "margin-top: 100px; margin-bottom: 50px;">Simpan Note</ion-button>
+
+    <ion-list>
+      <ion-item *ngFor="let data of isiData | async">
+        <ion-label>
+          <h1><b>{{data.judul}}</b></h1><br>
+          <p>{{data.isi}}</p><br>
+          <p>{{data.nilai}}</p><br>
+          <p>{{data.tanggal}}</p><br>
+          <ion-button slot="end" (click)="openDetail(data.judul, data.isi, data.nilai, data.tanggal, data.foto)">DETAIL</ion-button>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </center>
 </ion-content>

@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>
       Tab 2
     </ion-title>
@@ -13,5 +16,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <center>
+    <ion-input [(ngModel)]="Judul"></ion-input>
+    <ion-input [(ngModel)]="Isi"></ion-input>
+    <ion-input [(ngModel)]="Nilai"></ion-input>
+    <ion-input type="date"[(ngModel)]="Tanggal"></ion-input>
+    
+    <ion-button (click)="delete()">Delete This</ion-button>
+        
+
+  </center>
 </ion-content>
